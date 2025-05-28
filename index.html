@@ -11,7 +11,7 @@
     <nav>
       <a onclick="showSection('sobre')">Sobre mim</a> |
       <a onclick="showSection('formacao')">Formação</a> |
-      <a onclick="showSection('portfolio')">Portfólio</a> |
+      <a onclick="showSection('projetos')">Projetos</a> |
       <a onclick="showSection('contato')">Contato</a>
     </nav>
   </header>
@@ -45,32 +45,45 @@
             </ul>
         </div>
 
-      <h2>Idiomas</h2>
-      <ul>
-        <li>Português: Nativo</li>
-        <li>Inglês: Avançado</li>
-      </ul>
+      <h2 class="container-titles">Idiomas</h2>
+      <div class="container-text-section">
+        <ul>
+          <li>Português: Nativo</li>
+          <li>Inglês: Avançado</li>
+        </ul>
+      </div>
 
-      <h2>Resumo Profissional</h2>
-      <p>Desenvolvedor Java com conhecimentos em Spring Framework, PostgreSQL e arquitetura de software.</p>
-
-      <h2>Competências Técnicas</h2>
-      <ul>
-        <li><strong>Linguagens:</strong> Java</li>
-        <li><strong>Frameworks:</strong> Spring Framework, Spring Boot, Spring MVC, Spring Data JPA</li>
-        <li><strong>Bancos de Dados:</strong> PostgreSQL, SQL, JDBC, JPA, Hibernate</li>
-        <li><strong>Arquitetura:</strong> Design Patterns, SOLID, Clean Code, MVC, API REST</li>
-        <li><strong>DevOps:</strong> Git, Docker, Maven</li>
-      </ul>
+      <h2 class="container-titles">Competências Técnicas</h2>
+      <div class="container-text-section">
+        <ul>
+          <li><strong>Linguagens:</strong> Java</li>
+          <li><strong>Frameworks:</strong> Spring Framework, Spring Boot, Spring MVC, Spring Data JPA</li>
+          <li><strong>Bancos de Dados:</strong> PostgreSQL, SQL, JDBC, JPA, Hibernate</li>
+          <li><strong>Arquitetura:</strong> Design Patterns, SOLID, Clean Code, MVC, API REST</li>
+          <li><strong>DevOps:</strong> Git, Docker, Maven</li>
+        </ul>
+      </div>
     </article>
 
-    <article id="portfolio" class="section">
-      <h2 class="container-titles">Portfólio</h2>
-      <ul>
-        <li><a href="#" target="_blank">Projeto 1 – Exemplo</a></li>
-        <li><a href="#" target="_blank">Projeto 2 – Exemplo</a></li>
-        <li><a href="#" target="_blank">Projeto 3 – Exemplo</a></li>
-      </ul>
+    <article id="projetos" class="section">
+      <h2 class="container-titles">Projetos</h2>
+      <div class="container-text-section">
+        <ul>
+          <li><a href="https://github.com/fernandocarminatti/Back-end-Motto-MD-/blob/main/README.md" target="_blank">Projeto 1 – Desafio backend MottoMD.</a></li>
+          <p>Aplicação para gerenciar aluguel de veículos.</p>
+          <p>Java 17, Spring Boot, Spring Data, PostgreSQL, H2Database, JUnit, Mockito, Maven, Docker.</p>
+          <li><a href="https://github.com/fernandocarminatti/desafio-itau/blob/main/README.md" target="_blank">Projeto 2 – desafio-itau-backend.</a></li>
+          <p>Sistema de transações financeiras, onde o usuário pode inserir transações e consultar estatísticas sobre as transações feitas em determinado tempo.</p>
+          <p>Java 17, Spring Boot, Spring Data, PostgreSQL, Bean Validation, JUnit, Mockito, JMeter, Maven, Docker.</p>
+          <li><a href="https://github.com/fernandocarminatti/Random_Posts" target="_blank">Projeto 3 – Random Posts.</a></li>
+          <p>Aplicação simples com operações de CRUD em banco de dados PostgreSQL.</p>
+          <p>Java 17, Spring Boot, Spring Data, PostgreSQL, Maven, Docker.</p>
+          <p></p>
+          <li><a href="https://github.com/fernandocarminatti/ManagementPlayground/blob/main/README.md" target="_blank">Projeto 3 – Management Playground.</a></li>
+          <p>Aplicação com intuito de ser um "playground" de conhecimentos no que diz respeito a desenvolvimento de aplicações.</p>
+          <p>Java 17, Spring Boot, Flyway, PostgreSQL, Maven, Docker.</p>
+        </ul>
+      </div>
     </article>
 
     <article id="contato" class="section">
@@ -79,8 +92,8 @@
         <label for="nome">Nome:</label><br>
         <input type="text" id="nome" name="nome" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <label for="assunto">Assunto:</label><br>
+        <input type="text" id="assunto" name="assunto" required><br><br>
 
         <label for="mensagem">Mensagem:</label><br>
         <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>

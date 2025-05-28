@@ -1,10 +1,11 @@
 :root {
   --cinza-mais-escuro: #121212;  /* Fundo geral */
-  --cinza-escuro:      #1e1e1e;  /* Container ou header */
+  --cinza-escuro:      rgba(30, 30, 30, 0.384);  /* Container ou header */
   --cinza-medio:       #2b2b2b;  /* Borda, hover, contraste leve */
   --cinza-claro:       #b0b0b0;  /* Texto principal */
   --cinza-mais-claro:  #e0e0e0;  /* Texto claro, links hover */
-  --branco:            #ffffff;
+  --branco:            #f0f0f0;
+  --branco-hover:        rgb(243, 242, 242);
 }
 
 *{
@@ -49,7 +50,7 @@ nav a {
   cursor: pointer;
 }
 
-nav a:hover {
+nav a:hover, div.container-text-section a:hover {
   color: var(--cinza-mais-claro);
   text-decoration: underline;
 }
@@ -71,7 +72,7 @@ ul {
 }
 
 form input[type="text"],
-form input[type="email"],
+form input[type="assunto"],
 form textarea {
   width: 100%;
   padding: 10px;
@@ -103,19 +104,18 @@ form input[type="submit"]:hover {
   padding: 20px;
   background-color: var(--cinza-escuro);
   border-radius: 2px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(71, 71, 71, 0.5);
   overflow: auto;
 }
 
 .container-titles {
   font-size: 1.5rem;
-  margin: 10px auto 40px auto;
+  margin: 20px auto;
 }
 
 .container-text-section {
-  text-indent: 1em;
   margin: 0 auto;
-  padding: 30px;
+  padding: 40px;
   color: var(--cinza-claro);
   border-radius: 8px;
   overflow-y: auto;
@@ -128,4 +128,16 @@ form input[type="submit"]:hover {
 
 .container-text-section p {
   padding: 10px;
+}
+
+.container-text-section a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.container-text-section a:hover {
+  color: var(--branco-hover);
+  text-decoration: underline;
 }
