@@ -2,30 +2,30 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta view-port="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Portfólio</title>
+  <!-- Fonte Customizada para a página-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilo.css">
   <!-- Cloudflare Web Analytics -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "40c781cfee6049a49b5b67f1c52b842a"}'></script><!-- End Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "40c781cfee6049a49b5b67f1c52b842a"}'></script>
 </head>
 <body>
   <!-- Header, sempre visível -->
-  <header> 
-    <h1 class="container-titles">Fernando Carminatti</h1>
+  <header>
+    <h1 class="header-title">Fernando Carminatti</h1>
     <nav>
-      <a onclick="showSection('sobre')">Sobre mim</a> |
-      <a onclick="showSection('formacao')">Formação</a> |
-      <a onclick="showSection('projetos')">Projetos</a> |
-      <a onclick="showSection('contato')">Contato</a>
+      <a onclick="showSection('sobre', this)" class="active-link" aria-current="page">Sobre mim</a> |
+      <a onclick="showSection('formacao', this)">Formação</a> |
+      <a onclick="showSection('projetos', this)">Projetos</a> |
+      <a onclick="showSection('contato', this)">Contato</a>
     </nav>
   </header>
-  <!-- Conteúdo em section -->
-  <section class="container">
-    <!-- Separação por Artigos para fica tudo em uma única página. -->
-
+  <main class="container">
+    <!-- Separação por Article para fica tudo em uma única página. -->
     <!-- Sobre Mim -->
     <article id="sobre" class="section active">
-        <h2 class="container-titles">Sobre Mim</h2>
+        <h2 class="section-title">Sobre Mim</h2>
         <div class="container-text-section">
             <p>
                 Sou um desenvolvedor backend com ênfase em Java e no ecossistema Spring Framework, atuando com foco em aplicações robustas, escaláveis e bem estruturadas. Tenho facilidade em aplicar os princípios da programação orientada a objetos, padrões de projeto e boas práticas de arquitetura, com domínio sobre conceitos como SOLID, Clean Code e modelo MVC.
@@ -44,7 +44,7 @@
 
     <!-- Formação. -->
     <article id="formacao" class="section">
-      <h2 class="container-titles">Formação</h2>
+      <h2 class="section-title">Formação Acadêmica</h2>
         <div class="container-text-section">
             <ul>
                 <li><strong>Curso:</strong> Tecnólogo em Análise e Desenvolvimento de Sistemas</li>
@@ -53,15 +53,15 @@
             </ul>
         </div>
 
-      <h2 class="container-titles">Idiomas</h2>
+      <h3 class="subsection-title">Idiomas</h3>
       <div class="container-text-section">
         <ul>
           <li>Português: Nativo</li>
-          <li>Inglês: Avançado</li>
+          <li>Inglês: Fluente</li>
         </ul>
       </div>
 
-      <h2 class="container-titles">Competências Técnicas</h2>
+      <h3 class="subsection-title">Competências Técnicas</h3>
       <div class="container-text-section">
         <ul>
           <li><strong>Linguagens:</strong> Java</li>
@@ -75,51 +75,93 @@
 
     <!-- Projetos já desenvolvidos. -->
     <article id="projetos" class="section">
-      <h2 class="container-titles">Projetos</h2>
-      <div class="container-text-section">
-        <ul>
-          <li><a href="https://github.com/fernandocarminatti/Back-end-Motto-MD-/blob/main/README.md" target="_blank">Projeto 1 – Desafio backend MottoMD.</a></li>
+      <h2 class="section-title">Projetos</h2>
+      <ul class="project-list">
+        <li>
+          <h3><a href="https://github.com/fernandocarminatti/Back-end-Motto-MD-/blob/main/README.md" target="_blank">Projeto 1 – Desafio backend MottoMD</a></h3>
           <p>Aplicação para gerenciar aluguel de veículos.</p>
-          <p>Java 17, Spring Boot, Spring Data, PostgreSQL, H2Database, JUnit, Mockito, Maven, Docker.</p>
-          <li><a href="https://github.com/fernandocarminatti/desafio-itau/blob/main/README.md" target="_blank">Projeto 2 – desafio-itau-backend.</a></li>
+          <p class="tech-stack"><strong>Tecnologias:</strong> Java 17, Spring Boot, Spring Data, PostgreSQL, H2Database, JUnit, Mockito, Maven, Docker.</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/fernandocarminatti/desafio-itau/blob/main/README.md" target="_blank">Projeto 2 – desafio-itau-backend</a></h3>
           <p>Sistema de transações financeiras, onde o usuário pode inserir transações e consultar estatísticas sobre as transações feitas em determinado tempo.</p>
-          <p>Java 17, Spring Boot, Spring Data, PostgreSQL, Bean Validation, JUnit, Mockito, JMeter, Maven, Docker.</p>
-          <li><a href="https://github.com/fernandocarminatti/Random_Posts" target="_blank">Projeto 3 – Random Posts.</a></li>
+          <p class="tech-stack"><strong>Tecnologias:</strong> Java 17, Spring Boot, Spring Data, PostgreSQL, Bean Validation, JUnit, Mockito, JMeter, Maven, Docker.</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/fernandocarminatti/Random_Posts" target="_blank">Projeto 3 – Random Posts</a></h3>
           <p>Aplicação simples com operações de CRUD em banco de dados PostgreSQL.</p>
-          <p>Java 17, Spring Boot, Spring Data, PostgreSQL, Maven, Docker.</p>
-          <p></p>
-          <li><a href="https://github.com/fernandocarminatti/ManagementPlayground/blob/main/README.md" target="_blank">Projeto 3 – Management Playground.</a></li>
+          <p class="tech-stack"><strong>Tecnologias:</strong> Java 17, Spring Boot, Spring Data, PostgreSQL, Maven, Docker.</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/fernandocarminatti/ManagementPlayground/blob/main/README.md" target="_blank">Projeto 4 – Management Playground</a></h3>
           <p>Aplicação com intuito de ser um "playground" de conhecimentos no que diz respeito a desenvolvimento de aplicações.</p>
-          <p>Java 17, Spring Boot, Flyway, PostgreSQL, Maven, Docker.</p>
-        </ul>
-      </div>
+          <p class="tech-stack"><strong>Tecnologias:</strong> Java 17, Spring Boot, Flyway, PostgreSQL, Maven, Docker.</p>
+        </li>
+      </ul>
     </article>
 
     <!-- Contato. Simulação de envio de mensagem. -->
     <article id="contato" class="section">
-      <h2 class="container-titles">Contato</h2>
+      <h2 class="section-title">Contato</h2>
       <form onsubmit="event.preventDefault(); alert('Mensagem enviada (simulação)');">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
 
-        <label for="assunto">Assunto:</label><br>
-        <input type="text" id="assunto" name="assunto" required><br><br>
+        <div class="form-group">
+          <label for="assunto">Assunto:</label>
+          <input type="text" id="assunto" name="assunto" required>
+        </div>
 
-        <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+        <div class="form-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+        </div>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar Mensagem" class="submit-button">
       </form>
     </article>
-  </section>
+  </main>
 
   <!-- Script para mostrar/esconder seções por ID ao clickar em cada link do header. -->
   <script>
-    function showSection(id) {
+    function showSection(id, clickedLink) {
       const sections = document.querySelectorAll('.section');
       sections.forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+      const targetSection = document.getElementById(id);
+
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+
+      // Efeito de sublinhado no link selecionado
+      const navLinks = document.querySelectorAll('header nav a');
+      navLinks.forEach(link => {
+        link.classList.remove('active-link');
+        link.removeAttribute('aria-current');
+      });
+      if (clickedLink) {
+        clickedLink.classList.add('active-link');
+        clickedLink.setAttribute('aria-current', 'page');
+      }
     }
+
+    // Manter 'Sobre' como ativo no acesso a página.
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.location.hash) {
+        const sobreSection = document.getElementById('sobre');
+        if (sobreSection && !sobreSection.classList.contains('active')) {
+           const defaultActiveLink = document.querySelector('header nav a.active-link');
+           if (defaultActiveLink && defaultActiveLink.textContent.trim() === 'Sobre mim') {
+               showSection('sobre', defaultActiveLink);
+           } else {
+             const firstLink = document.querySelector('header nav a');
+             showSection('sobre', firstLink);
+           }
+        }
+      }
+    });
   </script>
 </body>
 </html>
