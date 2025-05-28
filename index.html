@@ -7,18 +7,95 @@
 </head>
 <body>
   <header>
-    <h1>Bem-vindo ao Meu Portfólio</h1>
+    <h1 class="container-titles">Fernando Carminatti</h1>
     <nav>
-      <ul>
-        <li><a href="about.html">Sobre mim</a></li>
-        <li><a href="education.html">Formação</a></li>
-        <li><a href="projects.html">Portfólio</a></li>
-        <li><a href="contact.html">Contato</a></li>
-      </ul>
+      <a onclick="showSection('sobre')">Sobre mim</a> |
+      <a onclick="showSection('formacao')">Formação</a> |
+      <a onclick="showSection('portfolio')">Portfólio</a> |
+      <a onclick="showSection('contato')">Contato</a>
     </nav>
   </header>
-  <main>
-    <p>Este é meu currículo online. Use o menu acima para navegar.</p>
-  </main>
+
+  <section class="container">
+    <article id="sobre" class="section active">
+        <h2 class="container-titles">Sobre Mim</h2>
+        <div class="container-text-section">
+            <p>
+                Sou um desenvolvedor backend com ênfase em Java e no ecossistema Spring Framework, atuando com foco em aplicações robustas, escaláveis e bem estruturadas. Tenho facilidade em aplicar os princípios da programação orientada a objetos, padrões de projeto e boas práticas de arquitetura, com domínio sobre conceitos como SOLID, Clean Code e modelo MVC.
+            </p>
+            <p>
+                Atualmente curso Análise e Desenvolvimento de Sistemas, com previsão de conclusão em 2027, o que complementa minha vivência prática com sólida formação teórica. Tenho especial interesse em projetos que envolvam APIs RESTful, persistência com PostgreSQL e automação de processos, especialmente em contextos que exigem eficiência operacional e integridade de dados.
+            </p>
+            <p>
+                Domino ferramentas essenciais ao ciclo de desenvolvimento moderno, como Git, Maven e Docker, o que me permite atuar com autonomia desde a construção da solução até sua entrega. Fluente em inglês, mantenho-me atualizado com as tendências e documentações técnicas internacionais, o que facilita o aprendizado contínuo e a colaboração em projetos diversos.
+            </p>
+            <p>
+                Estou disponível para novos desafios e aberto a contribuir com times que valorizem código limpo, clareza de propósito e responsabilidade técnica.
+            </p>
+        </div>
+    </article>
+
+    <article id="formacao" class="section">
+      <h2 class="container-titles">Formação</h2>
+        <div class="container-text-section">
+            <ul>
+                <li><strong>Curso:</strong> Tecnólogo em Análise e Desenvolvimento de Sistemas</li>
+                <li><strong>Instituição:</strong> Centro Universitário Internacional UNINTER</li>
+                <li><strong>Status:</strong> Em andamento – Conclusão prevista: 2027</li>
+            </ul>
+        </div>
+
+      <h2>Idiomas</h2>
+      <ul>
+        <li>Português: Nativo</li>
+        <li>Inglês: Avançado</li>
+      </ul>
+
+      <h2>Resumo Profissional</h2>
+      <p>Desenvolvedor Java com conhecimentos em Spring Framework, PostgreSQL e arquitetura de software.</p>
+
+      <h2>Competências Técnicas</h2>
+      <ul>
+        <li><strong>Linguagens:</strong> Java</li>
+        <li><strong>Frameworks:</strong> Spring Framework, Spring Boot, Spring MVC, Spring Data JPA</li>
+        <li><strong>Bancos de Dados:</strong> PostgreSQL, SQL, JDBC, JPA, Hibernate</li>
+        <li><strong>Arquitetura:</strong> Design Patterns, SOLID, Clean Code, MVC, API REST</li>
+        <li><strong>DevOps:</strong> Git, Docker, Maven</li>
+      </ul>
+    </article>
+
+    <article id="portfolio" class="section">
+      <h2 class="container-titles">Portfólio</h2>
+      <ul>
+        <li><a href="#" target="_blank">Projeto 1 – Exemplo</a></li>
+        <li><a href="#" target="_blank">Projeto 2 – Exemplo</a></li>
+        <li><a href="#" target="_blank">Projeto 3 – Exemplo</a></li>
+      </ul>
+    </article>
+
+    <article id="contato" class="section">
+      <h2 class="container-titles">Contato</h2>
+      <form onsubmit="event.preventDefault(); alert('Mensagem enviada (simulação)');">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </article>
+  </section>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
