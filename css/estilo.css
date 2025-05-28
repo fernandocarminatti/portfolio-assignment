@@ -1,19 +1,26 @@
+/*
+Guardar cores padrões em variáveis para facilitar reuso e entendimento.
+*/
 :root {
   --cinza-mais-escuro: #121212;  /* Fundo geral */
-  --cinza-escuro:      rgba(30, 30, 30, 0.384);  /* Container ou header */
-  --cinza-medio:       #2b2b2b;  /* Borda, hover, contraste leve */
+  --cinza-escuro:      rgba(30, 30, 30, 0.384);  /* Containers gerais */
+  --cinza-medio:       #2b2b2b;  /* TextArea formulário */
   --cinza-claro:       #b0b0b0;  /* Texto principal */
-  --cinza-mais-claro:  #e0e0e0;  /* Texto claro, links hover */
-  --branco:            #f0f0f0;
-  --branco-hover:        rgb(243, 242, 242);
+  --cinza-mais-claro:  #e0e0e0;  /* Texto claro, links :hover */
+  --branco:            #f0f0f0;  /* Texto branco */
+  --branco-hover:        rgb(243, 242, 242);  /* Texto branco, links :hover */
 }
 
+/*
+CSS Reset, para evitar efeitos indesejados.
+*/
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 
 }
+
 body {
   height: 100%;
   overflow: hidden;
@@ -50,7 +57,10 @@ nav a {
   cursor: pointer;
 }
 
-nav a:hover, div.container-text-section a:hover {
+/*
+Todos links via tag a devem conter estilo padrão.
+*/
+nav a:hover {
   color: var(--cinza-mais-claro);
   text-decoration: underline;
 }
@@ -71,32 +81,9 @@ ul {
   padding-left: 20px;
 }
 
-form input[type="text"],
-form input[type="assunto"],
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 4px;
-  margin-bottom: 16px;
-  border: 1px solid var(--cinza-medio);
-  border-radius: 4px;
-  background-color: var(--cinza-mais-escuro);
-  color: var(--branco);
-}
-
-form input[type="submit"] {
-  background-color: var(--cinza-claro);
-  color: var(--cinza-mais-escuro);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-form input[type="submit"]:hover {
-  background-color: var(--cinza-mais-claro);
-}
-
+/*
+Estilo do container central
+*/
 .container {
   width: 50vw;
   height: calc(80vh - 50px);
@@ -108,11 +95,17 @@ form input[type="submit"]:hover {
   overflow: auto;
 }
 
+/*
+Todos títulos com o mesmo estilo, baseado em nível de cabeçalho.
+*/
 .container-titles {
   font-size: 1.5rem;
   margin: 20px auto;
 }
 
+/*
+Toda seção de texto do container com o mesmo padrão.
+*/
 .container-text-section {
   margin: 0 auto;
   padding: 40px;
@@ -141,3 +134,33 @@ form input[type="submit"]:hover {
   color: var(--branco-hover);
   text-decoration: underline;
 }
+
+/*
+Estilo formuláio.
+*/
+form input[type="text"],
+form input[type="assunto"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 4px;
+  background-color: var(--cinza-mais-escuro);
+  color: var(--branco);
+}
+
+form input[type="submit"] {
+  background-color: var(--cinza-claro);
+  color: var(--cinza-mais-escuro);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--cinza-mais-claro);
+}
+
